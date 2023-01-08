@@ -75,7 +75,7 @@ const MyPage = () => {
               <p>Public Key: {publicKey}</p>
               <p>Private Key: <button onClick={secretDownloadHandler} >Click to download</button> <button>Click to upload to cloud--Coming Soon</button> </p>
               <div className="center">
-                <button onClick={onPress}> Next {"> > >"} </button>
+                <button onClick={onPress}>Continue</button>
               </div>
             </>
           )
