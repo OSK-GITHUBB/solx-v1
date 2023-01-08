@@ -5,6 +5,7 @@ import AuthLayout from "./auth/AuthLayout";
 import Login from "./auth/Login";
 import Page404 from "./404";
 import PrivateRoute from "./PrivateRoute";
+import FundWallet from "./FundWallet"
 
 const routes = [
     {
@@ -24,6 +25,11 @@ const routes = [
     {
         path: "/my-page",
         element: <MyPage />,
+        auth: true
+    },
+    {
+        path: "/fund-wallet",
+        element: <FundWallet />,
         auth: true
     },
     {
