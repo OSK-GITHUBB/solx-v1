@@ -57,7 +57,7 @@ const MyPage = () => {
   }
 
   return <div className="flexDirectionColumn">
-    <h2 className="white">Hoş geldin {user?.name}</h2>
+    <h2 className="white center">Welcome {user?.name}</h2>
     <button style={{ position: "absolute", right: 24, top: 24 }} onClick={logoutHandle}>Log out</button>
     <div className="center">
       <body>
