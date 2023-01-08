@@ -44,12 +44,14 @@ const MyPage = () => {
     const auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(
       auth2.disconnect().then(console.log('LOGOUT SUCCESSFUL')),
-    )
-    localStorage.removeItem("user")
-    setUser(false)
-    navigate(location?.state?.return_url || "/", {
-      replace: true
-    })
+      localStorage.removeItem("user"),
+      setUser(false),
+      navigate(location?.state?.return_url || "/", {
+        replace: true
+      })
+    ).catch = (err) => {
+      alert("Error ", err)
+    }
   }, [])
 
   const onPress = () => {
@@ -57,7 +59,7 @@ const MyPage = () => {
   }
 
   return <div className="flexDirectionColumn">
-    <h2 className="white">Hoş geldin {user?.name}</h2>
+    <h2 className="white">Welcome {user?.name}</h2>
     <button style={{ position: "absolute", right: 24, top: 24 }} onClick={logoutHandle}>Log out</button>
     <div className="center">
       <body>
