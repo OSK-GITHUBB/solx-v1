@@ -40,7 +40,7 @@ const MyPage = () => {
     saveAs(secretKeyBlob, secretKeyFileName);
   }
 
-  const logoutHandle = useCallback(async () => {
+  const logoutHandle = () => {
     const auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(
       auth2.disconnect().then(console.log('LOGOUT SUCCESSFUL')),
@@ -52,7 +52,7 @@ const MyPage = () => {
     ).catch = (err) => {
       alert("Error ", err)
     }
-  }, [user])
+  }
 
   const onPress = () => {
     navigate("/fund-wallet")
