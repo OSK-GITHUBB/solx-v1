@@ -52,7 +52,7 @@ const MyPage = () => {
     ).catch = (err) => {
       alert("Error ", err)
     }
-  }, [])
+  }, [user])
 
   const onPress = () => {
     navigate("/fund-wallet")
