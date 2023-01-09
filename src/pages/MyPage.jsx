@@ -40,8 +40,8 @@ const MyPage = () => {
     saveAs(secretKeyBlob, secretKeyFileName);
   }
 
-  const logoutHandle = () => {
-    const auth2 = gapi.auth2.getAuthInstance();
+  const logoutHandle = async() => {
+    const auth2 = await gapi.auth2.getAuthInstance();
     auth2.signOut().then(
       auth2.disconnect().then(console.log('LOGOUT SUCCESSFUL')),
       localStorage.removeItem("user"),
