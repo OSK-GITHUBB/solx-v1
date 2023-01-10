@@ -1,10 +1,10 @@
 import { gapi } from "gapi-script";
-import { useCallback, useState } from "react";
+import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import * as Web3 from '@solana/web3.js'
 import { saveAs } from 'file-saver';
 
-const MyPage = () => {
+const MyPage: React.FC = () => {
   const navigate = useNavigate()
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")) || false);
   const location = useLocation()
@@ -40,8 +40,8 @@ const MyPage = () => {
     saveAs(secretKeyBlob, secretKeyFileName);
   }
 
-  const logoutHandle = useCallback(async () => {
-    const auth2 = gapi.auth2.getAuthInstance();
+  const logoutHandle = async () => {
+    const auth2 = await gapi.auth2.getAuthInstance();
     auth2.signOut().then(
       auth2.disconnect().then(console.log('LOGOUT SUCCESSFUL')),
       localStorage.removeItem("user"),
@@ -49,10 +49,8 @@ const MyPage = () => {
       navigate(location?.state?.return_url || "/", {
         replace: true
       })
-    ).catch = (err) => {
-      alert("Error ", err)
-    }
-  }, [])
+    )
+  }
 
   const onPress = () => {
     navigate("/fund-wallet")
