@@ -6,12 +6,16 @@ App:
 
 Webb-App optimized for Google Cloud Platform (GCP) App Engine
 
+Need to have npm installed, helpful to have nvm. 
+
 to run on GCP App Engine:
 
-1- make sure you are on the correct version (v16.19.0)
+1- make sure you are on the correct version (NodeJS v16.19.0)
+
 nvm ls
 
 if not on correct version:
+
 nvm use v16.19.0
 
 2- Make sure the app is running ok on local:
