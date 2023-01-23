@@ -6,6 +6,9 @@ import Login from "./auth/Login";
 import Page404 from "./404";
 import PrivateRoute from "./PrivateRoute";
 import FundWallet from "./FundWallet"
+import Amount from "./Amount"
+import FundAccount from "./FundAccount"
+
 
 const routes = [
     {
@@ -30,6 +33,16 @@ const routes = [
     {
         path: "/fund-wallet",
         element: <FundWallet />,
+        auth: true
+    },
+    {
+        path: "/amount",
+        element: <Amount />,
+        auth: true
+    },
+    {
+        path: "/fund-account",
+        element: <FundAccount />,
         auth: true
     },
     {
