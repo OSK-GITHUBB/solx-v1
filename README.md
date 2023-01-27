@@ -1,3 +1,5 @@
+visit https://solx.finance/ to see the application (not done yet).
+
 White Paper:
 
 SolX Finance WhitePaper Version 0.9.1 (Not Final, Subject to Change)
